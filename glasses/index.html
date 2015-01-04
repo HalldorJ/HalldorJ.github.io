@@ -14,15 +14,20 @@
 
  <div ng-controller="UploadController ">
   <form>
+		<input type="button" value="Resize Image" id="resize" />
+	  	<input type="range" id="size" min="128" max="1024">
         <input type="file" ng-file-select="onFileSelect($files)" >
  <!--  <input type="file" ng-file-select="onFileSelect($files)" multiple> -->
   
    </form>
    <b>Preview:</b><br />
    <i ng-hide="imageSrc">No image choosed</i>
-   <img ng-src="{{imageSrc}}" width="250" /><br/>
+   <img id="inputImage" ng-src="{{imageSrc}}" width="1024" height="768" /><br/>
    <b>Progress:</b>
   <progress value="{{progress}}"></progress>
      </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="resize.js"></script>
 
 </html>
